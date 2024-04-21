@@ -19,10 +19,11 @@ def hbhb():
     """returns HBNB"""
     return 'HBNB'
 
+
 @app.route('/c/<text>', strict_slashes=False)
 def cRoute(text):
     """returns c with the text after"""
-    text = text.replace('_',' ')
+    text = text.replace('_', ' ')
     return 'C ' + text
 
 if __name__ == '__main__':
