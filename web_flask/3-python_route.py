@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-start Flask application
+Start Flask application
 """
 
 from flask import Flask
@@ -27,13 +27,12 @@ def cRoute(text):
     return 'C ' + text
 
 
+@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def pyRoute(text):
-    """returns c with the text after"""
-    if not text:
-        text = "is cool"
+def pyRoute(text='is cool'):
+    """returns python with the text after"""
     text = text.replace('_', ' ')
-    return "Python " + text    
+    return "Python " + text
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
